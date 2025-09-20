@@ -1,120 +1,37 @@
-# username_assignment_3.py
-# COMP 163 - Assignment 3Limited Use (test data provided as example)
+# Assignment 3 — Personal Data Portfolio
 
-# Personal Information Storage
-full_name = "DJ Norman"
-student_email = "donorman@ncat.edu"
-hometown = "Durham, NC"
-graduation_semester = "Fall 2029"
-major = "Computer Science"
+## Author
+DJ Norman — COMP 163, Fall 2025  
+Student email: donorman@ncat.edu
 
-# Academic Data Organization 
-current_courses = ["COMP 163", "GEEN 111", "HIST 103", "SOCI 100", "SPCH 250"]
-completed_courses = ["BIOL 100", "BTEC 110", "ENGL 100", "FRST 100", "MGMT 110", "ENGL 101", "LIBS 202"]
-credit_hours = [3, 3, 3, 3, 1]  # corresponds to current_courses in same order
-gpa_history = [3.7, 2.8]  # semester GPAs as floats
+## Description
+This project is the Part 1 & Part 2 submission for COMP 163 — **Assignment 3: Personal Data Portfolio & Git Collaboration**.
 
-# Contact Information Storage
-# Access tuple elements by index 
-emergency_contact = ("Mom", "Dana Norman", "919-306-0998")
-home_address = ("1326 Boxwood Trace Ln", "Hillsborough, NC", "27278")
-instagram_info = ("Instagram", "@d_wavy7", 235)  # last element is follower count
-twitter_info = ("Twitter", "@d_wavy7", 124)         # last element is follower count
-birthday = ("Birthday", 12, 19, 2005)  # month, day, year at indices 1,2,3
+The Python program (`[username]_assignment_3.py`) demonstrates mastery of Chapter 3 data types (strings, lists, tuples, sets, dictionaries) and performs the required calculations and analytics using the exact test values for Part 1. Part 2 shows how the program was customized with the student's real personal data and tracked using Git with meaningful commits.
 
-# Interest Tracking 
-current_skills_set = {"Python basics", "Problem solving", "Time management", "Excle"}
-skills_to_learn_set = {"JavaScript", "Pytnon", "Git", "Web design"}
-career_interests_set = {"Software development", "Web development"}
-hobbies_set = {"Gaming", "Basketball", "Drums", "Music"}
-entertainment_backlog_set = {"One Piece", "Barry", "Life", "Incantation", "Memento"}
+## Files
+- `[username]_assignment_3.py` — Main Python program (runs without errors; straight-line code only: no functions, loops, or conditionals).
+- `README.md` — Project documentation (this file).
+- `git-tutorial-screenshot.png` — Screenshot showing completion of Learngitbranching Introduction sequence levels 1–4 (submit to Blackboard as required).
+- (Optional) any additional personal-resource files added by the student.
 
-# Organizational Mapping 
-course_credits = {"COMP 163": 3, "MATH 150": 3, "ENG 101": 3, "HIS 105": 3}
-course_professors = {
-    "COMP 163": "Prof. Rhodes",
-    "GEEN 111": " Dr. Leotis",
-    "SOCI 100": "Professor Lyric",
-    "HIST 103": "Professor Corey ",
-    "SPCH 250": "Regina L"
-}
-course_rooms = {
-    "COMP 163": "Gibbs Hall 337",
-    "GEEN 111": "McNair Hall 214",
-    "SOCI 100": "Online",
-    "HIST": "Gibbs Hall 337",
-    "SPCH": "Online"
-}
-monthly_budget = {"Food": 450, "Entertainment": 200, "Books": 125, "Transportation": 70}
-study_hours_per_subject = {"COMP": 4, "GEEN": 2, "SOCI": 2, "HIST": 3, "SPCH": 2}
-contact_directory = {"Mom": "919-306-1556", "Roommate": "336-555-7821", "Academic Advisor": "336-334-5000"}
+## Features / Requirements Demonstrated
+- Uses **all Chapter 3 data types**:
+  - Strings: personal info
+  - Lists: current/completed courses, credits, GPA history
+  - Tuples: emergency contact, addresses, social handles (tuple indexing used)
+  - Sets: skills, hobbies, backlog
+  - Dictionaries: course mappings, budgets, contact directory, study hours
+- Required calculations:
+  - Total current credits, cumulative GPA, completed course count
+  - Total weekly study hours, academic load, monthly/annual budget calculations
+  - Daily food budget (rounded to 2 decimals), study cost per hour (rounded)
+- Analytics: social followers total, skill counts, contact directory size, backlog count
+- Output formatting: professional console output using f-strings and `round()` where needed
+- Compliance: no functions, loops, or conditionals used in Part 1 solution
 
-# Required Calculations 
-total_current_credits = sum(credit_hours)
-cumulative_gpa = sum(gpa_history) / len(gpa_history)
-completed_courses_count = len(completed_courses)
-total_weekly_study_hours = sum(study_hours_per_subject.values())
-academic_load = total_current_credits + total_weekly_study_hours
-monthly_budget_total = sum(monthly_budget.values())
-daily_food_budget = round(monthly_budget["Food"] / 30, 2)
-annual_budget_projection = monthly_budget_total * 12
-study_cost_per_hour = round(monthly_budget["Books"] / total_weekly_study_hours, 2)
-
-# Analytics Calculations
-instagram_followers = instagram_info[2]
-twitter_followers = twitter_info[2]
-total_social_media_followers = instagram_followers + twitter_followers
-current_skills_count = len(current_skills_set)
-skills_to_learn_count = len(skills_to_learn_set)
-contact_directory_size = len(contact_directory)
-entertainment_backlog_count = len(entertainment_backlog_set)
-average_study_hours_per_credit = round(total_weekly_study_hours / total_current_credits, 2)
-
-
-output_str = f"""================================================================
-              PERSONAL ACADEMIC & LIFE PORTFOLIO
-================================================================
-Student: {full_name} | Email: {student_email}
-From: {hometown} | Graduating: {graduation_semester}
-Major: {major}
-
-=== ACADEMIC PROFILE ===
-Current Semester: {total_current_credits} credits across {len(current_courses)} courses
-Cumulative GPA: {round(cumulative_gpa,2)}
-Weekly Study Time: {total_weekly_study_hours} hours
-Academic Investment: ${study_cost_per_hour} per study hour
-
-Current Courses:
-{current_courses[0]} - {course_credits[current_courses[0]]} credits - {course_professors[current_courses[0]]} - {course_rooms[current_courses[0]]}
-{current_courses[1]} - {course_credits[current_courses[1]]} credits - {course_professors[current_courses[1]]} - {course_rooms[current_courses[1]]}
-{current_courses[2]} - {course_credits[current_courses[2]]} credits - {course_professors[current_courses[2]]} - {course_rooms[current_courses[2]]}
-{current_courses[3]} - {course_credits[current_courses[3]]} credits - {course_professors[current_courses[3]]} - {course_rooms[current_courses[3]]}
-
-=== PERSONAL DEVELOPMENT ===
-Current Skills: {current_skills_set}
-Learning Goals: {skills_to_learn_set}
-Career Interests: {career_interests_set}
-Skills Currently Have: {current_skills_count}
-Skills Want to Learn: {skills_to_learn_count}
-
-=== FINANCIAL OVERVIEW ===
-Monthly Budget: ${monthly_budget_total}
-Food: ${monthly_budget['Food']} (${daily_food_budget}/day)
-Entertainment: ${monthly_budget['Entertainment']}
-Books: ${monthly_budget['Books']}
-Transportation: ${monthly_budget['Transportation']}
-Annual Projection: ${annual_budget_projection}
-
-=== CONNECTIONS & CONTACTS ===
-Emergency Contact: {emergency_contact[1]} ({emergency_contact[0]}) - {emergency_contact[2]}
-Home Address: {home_address[0]}, {home_address[1]} {home_address[2]}
-Social Media Presence: {total_social_media_followers} followers across 2 platforms
-Key Contacts: {contact_directory_size} people in directory
-
-=== LIFE STATISTICS ===
-Total Courses Completed: {completed_courses_count}
-Current Academic Load: {academic_load} weekly commitments
-Entertainment Backlog: {entertainment_backlog_count} items
-Current Hobbies: {len(hobbies_set)} activities
-================================================================"""
-print(output_str)
+## How to run
+1. Ensure Python 3 is installed (Python 3.8+ recommended).
+2. From the repository root run:
+```bash
+python [username]_assignment_3.py
